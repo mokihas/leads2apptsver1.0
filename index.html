@@ -1198,28 +1198,35 @@
 
         // Form submission
         const contactForm = document.getElementById('appointmentForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to your server
-                // For demo purposes, we'll just show an alert
-                alert('Thank you for your message! We will contact you shortly.');
-                this.reset();
-                
-                // In a real implementation, you would use fetch() or FormSubmit
-                // Example with FormSubmit:
-                // fetch(this.action, {
-                //     method: 'POST',
-                //     body: new FormData(this)
-                // })
-                // .then(response => {
-                //     if (response.ok) {
-                //         window.location.href = this.querySelector('input[name="_next"]').value;
-                //     }
-                // });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get the form data
+            const formData = new FormData(this);
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
             });
-        }
+
+            // Your EmailJS service ID, template ID, and public key
+            const serviceId = 'YOUR_SERVICE_ID';
+            const templateId = 'template_122ye74';
+            const publicKey = 'yCbeo4IhcL-GmRQB7';
+
+            emailjs.send(serviceId, templateId, formDataObject, publicKey)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Thank you for booking a free strategy call! We will be in touch soon.');
+                    this.reset();
+                    // Optionally, redirect the user or perform other actions on success
+                    // window.location.href = '/thank-you';
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('Oops! Something went wrong. Please try again later.');
+                });
+        });
+    }
 
         // Scroll animation
         const fadeElements = document.querySelectorAll('.fade-in');
