@@ -1058,39 +1058,38 @@
                     Saturday - Sunday: Closed</p>
                 </div>
                 
-                <div class="contact-form fade-in">
-                    <form id="appointmentForm" action="https://formsubmit.co/your@email.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">How Can We Help You?</label>
-                            <textarea id="message" name="message" class="form-control"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;">Book Free Strategy Call</button>
-                    </form>
-                </div>
+             <div class="contact-form fade-in">
+    <form id="appointmentForm">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">How Can We Help You?</label>
+            <textarea id="message" name="message" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</div>
             </div>
         </div>
     </section>
@@ -1198,7 +1197,11 @@
         });
 
         // Form submission
-        const contactForm = document.getElementById('appointmentForm');
+        (function() {
+    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your actual public key
+
+    // Form submission
+    const contactForm = document.getElementById('appointmentForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1210,6 +1213,8 @@
                 formDataObject[key] = value;
             });
 
+            console.log("formDataObject:", formDataObject);
+
             // Your EmailJS service ID, template ID, and public key
             const serviceId = 'service_2fw2c2c';
             const templateId = 'template_122ye74';
@@ -1220,14 +1225,13 @@
                     console.log('SUCCESS!', response.status, response.text);
                     alert('Thank you for booking a free strategy call! We will be in touch soon.');
                     this.reset();
-                    // Optionally, redirect the user or perform other actions on success
-                    // window.location.href = '/thank-you';
                 }, (error) => {
                     console.error('FAILED...', error);
                     alert('Oops! Something went wrong. Please try again later.');
                 });
         });
     }
+})();
 
         // Scroll animation
         const fadeElements = document.querySelectorAll('.fade-in');
