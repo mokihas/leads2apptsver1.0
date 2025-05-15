@@ -249,95 +249,69 @@
             min-width: 200px;
         }
 
-        /* How It Works Section */
-        .how-it-works {
+        /* Lead Section */
+        .lead-section {
             background: white;
+            padding: 80px 0;
         }
 
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
+        .lead-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .step {
-            flex: 1;
-            min-width: 250px;
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
+        .lead-header {
             text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
         }
 
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-        }
-
-        .step-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .step-description {
-            color: var(--gray);
-        }
-
-        /* Why Choose Us Section */
-        .why-choose-us {
-            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            color: var(--primary);
+        .lead-header h2 {
             font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
-        .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+        .lead-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .feature-description {
-            color: var(--gray);
+        .lead-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .lead-feature {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .lead-feature h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .lead-feature ul {
+            margin-top: 20px;
+        }
+
+        .lead-feature li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lead-feature i {
+            color: var(--success);
         }
 
         /* Pricing Section */
@@ -738,101 +712,42 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="section how-it-works">
-        <div class="container">
-            <h2 class="section-title fade-in">Our Lead Generation Process</h2>
-            <p class="section-subtitle fade-in">A proven 4-step system to deliver high-quality, sales-ready leads</p>
-            
-            <div class="steps-container">
-                <div class="step fade-in">
-                    <div class="step-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="step-title">AI-Powered Targeting</h3>
-                    <p class="step-description">We identify your ideal customers using advanced algorithms analyzing firmographics, technographics, and intent signals.</p>
-                </div>
-                
-                <div class="step fade-in">
-                    <div class="step-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="step-title">Multi-Channel Outreach</h3>
-                    <p class="step-description">Our team engages prospects through email, LinkedIn, display ads, and content syndication.</p>
-                </div>
-                
-                <div class="step fade-in">
-                    <div class="step-icon">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3 class="step-title">Lead Qualification</h3>
-                    <p class="step-description">Every lead is vetted against your BANT criteria (Budget, Authority, Need, Timeline).</p>
-                </div>
-                
-                <div class="step fade-in">
-                    <div class="step-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3 class="step-title">Lead Delivery</h3>
-                    <p class="step-description">Verified leads are delivered in your preferred format with full engagement history.</p>
-                </div>
+    <!-- Lead Section -->
+    <section class="lead-section">
+        <div class="lead-container">
+            <div class="lead-header fade-in">
+                <h2>EXCLUSIVE WEB LEADS</h2>
+                <p>Ideal for businesses with an in-house team ready to follow up and convert interest into appointments.</p>
+                <p>Our leads are generated through various trusted platforms, predominantly Google, and delivered in real time. Each lead is 100% exclusive to your business - they are never shared or resold.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="section why-choose-us">
-        <div class="container">
-            <h2 class="section-title fade-in">Why Our Leads Convert Better</h2>
-            <p class="section-subtitle fade-in">What sets us apart from traditional lead generation services</p>
             
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="feature-title">Intent-Based Targeting</h3>
-                    <p class="feature-description">We target prospects showing active interest in solutions like yours, not just random contacts.</p>
+            <div class="lead-features">
+                <div class="lead-feature fade-in">
+                    <h3>DELIVERY OPTIONS</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> API</li>
+                        <li><i class="fas fa-check"></i> Google Sheet</li>
+                        <li><i class="fas fa-check"></i> API integration into your CRM</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="feature-title">AI-Powered Qualification</h3>
-                    <p class="feature-description">Our AI analyzes hundreds of data points to predict which leads are most likely to convert.</p>
+                <div class="lead-feature fade-in">
+                    <h3>KEY FEATURES</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Exclusive to your business only</li>
+                        <li><i class="fas fa-check"></i> Real-time lead delivery</li>
+                        <li><i class="fas fa-check"></i> Replacement policy for dead or invalid numbers</li>
+                        <li><i class="fas fa-check"></i> 48-hour turnaround</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="feature-title">Multi-Touch Approach</h3>
-                    <p class="feature-description">Leads are engaged through multiple touchpoints before being qualified.</p>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-check"></i>
-                    </div>
-                    <h3 class="feature-title">Human Verification</h3>
-                    <p class="feature-description">Every lead is personally verified by our team to ensure accuracy.</p>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="feature-title">Performance Tracking</h3>
-                    <p class="feature-description">We provide detailed analytics on lead quality and conversion rates.</p>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3 class="feature-title">Pay for Performance</h3>
-                    <p class="feature-description">You only pay for qualified leads that meet your specific criteria.</p>
+                <div class="lead-feature fade-in">
+                    <h3>WEB LEADS BENEFITS</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Fast, reliable delivery</li>
+                        <li><i class="fas fa-check"></i> Choose 7-15 postcodes (for regional campaigns)</li>
+                        <li><i class="fas fa-check"></i> 15-20% average conversion rate to appointment</li>
+                    </ul>
                 </div>
             </div>
         </div>
